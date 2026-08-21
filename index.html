@@ -37,7 +37,7 @@
 <title>Ministry of Alphabetical Order</title>
 <style>
   :root{
-    --ink:#0e1013; --ink-2:#252a31; --body:#41474f; --muted:#6b727b; --faint:#98a0a9;
+    --ink:#0e1013; --ink-2:#252a31; --body:#41474f; --muted:#6b727b; --faint:#6a7078;
     --line:#e4e7ea; --line-2:#cdd2d8; --wash:#f6f7f8; --ground:#ffffff;
     --accent:#0a7d55; --accent-lt:#e6f3ed; --accent-dk:#065f40;
     --alert:#c62f22; --alert-lt:#fdeceb;
@@ -203,7 +203,7 @@
   /* ---------- footer ---------- */
   footer{background:var(--ink);color:#8b939d;padding:clamp(44px,6vw,72px) 0 clamp(52px,7vw,84px)}
   footer .doc{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:10px;letter-spacing:.16em;
-    text-transform:uppercase;color:#5f6771;margin-bottom:20px}
+    text-transform:uppercase;color:#7a828b;margin-bottom:20px}
   footer p{max-width:76ch;font-size:14.5px}
   footer p + p{margin-top:12px}
   footer a{color:#fff;text-decoration:underline}
@@ -265,12 +265,12 @@
   <div class="wrap">
     <div class="eyebrow">The bench</div>
     <h2>The same list, sorted correctly, five times</h2>
-    <p class="note">Nothing below is simulated. Your browser performs each ordering itself, using the Unicode collation data it already ships with. A curve is drawn only where a jurisdiction moves an entry: green where it sorts the entry earlier, amber where it sorts it later. Where the curves cross, two jurisdictions have swapped a pair over. An entry that never moves is set in grey, having caused nobody any trouble.</p>
+    <p class="note">Nothing below is simulated. Your browser performs each ordering itself, using whatever collation data it ships with, and the plot states below which collation it actually resolved. A curve is drawn only where a jurisdiction moves an entry: green where it sorts the entry earlier, amber where it sorts it later. Where the curves cross, two jurisdictions have swapped a pair over. An entry that never moves is set in grey, having caused nobody any trouble.</p>
 
     <div class="bench">
       <div class="field">
         <div>
-          <label for="items">Matter submitted for ordering &middot; one entry per line</label>
+          <label for="items">Matter submitted for ordering &middot; one entry per line, first fourteen</label>
           <textarea id="items" spellcheck="false">Aal
 Äpfel
 Ångström
@@ -295,10 +295,10 @@ Zürich</textarea>
       <div class="plate">
         <div class="plot-wrap">
           <svg class="plot" id="plot" role="img" aria-labelledby="plotTitle">
-            <title id="plotTitle">The same entries ordered under five jurisdictions, with a line joining each entry to itself; the lines cross wherever two jurisdictions disagree</title>
+            <title id="plotTitle">The same entries ordered under five jurisdictions</title>
           </svg>
         </div>
-        <div class="summary" id="summary"></div>
+        <div class="summary" id="summary" role="status" aria-live="polite"></div>
       </div>
     </div>
   </div>
@@ -308,7 +308,7 @@ Zürich</textarea>
   <div class="wrap">
     <div class="eyebrow">The principal ruling &middot; the letter I</div>
     <h2 class="wide">The Ministry finds that lowercase is a matter of nationality and of security, thus a matter of national security</h2>
-    <p class="note">Turkish has two letter I's, and they are different letters. Dotted <span class="mono">i</span> uppercases to dotted <span class="mono">İ</span>. Dotless <span class="mono">ı</span> uppercases to plain <span class="mono">I</span>. Lowercasing is therefore not a universal operation, and software that assumes it is has been failing in Turkey for thirty years, usually at the login screen.</p>
+    <p class="note">Turkish has two letter I's, and they are different letters. Dotted <span class="mono">i</span> uppercases to dotted <span class="mono">İ</span>. Dotless <span class="mono">ı</span> uppercases to plain <span class="mono">I</span>. Lowercasing is therefore not a universal operation, and software that assumes it is has been failing in Turkey ever since, often at the login screen.</p>
 
     <div class="probe">
       <div>
@@ -336,15 +336,15 @@ Zürich</textarea>
       </div>
     </div>
 
-    <p class="note" style="margin-top:18px">A program lowercases what you typed, compares it against a stored value, and finds them different, because one machine was set to Turkish and the other was not. The comparison is correct. The strings are genuinely not the same. Nobody involved has made an error.</p>
+    <p class="note" style="margin-top:18px">A program lowercases what you typed, compares it against a stored value, and finds them different, because one machine was set to Turkish and the other was not. The comparison is correct. The strings are genuinely not the same. No party to the comparison has made a mistake; the mistake is further up, in having decided to compare this way at all.</p>
 
     <h3 class="movement">The consequence is not typographic</h3>
     <p class="note">A system keeps you out of a reserved account by lowercasing what you typed and comparing it against a list. Lowercasing is a matter of nationality. Not yours: the machine's. The Ministry did not intend to acquire a national security brief. It is about to acquire one by deduction, which is the only way this Ministry acquires anything.</p>
 
-    <div class="gate" id="gate"></div>
+    <div class="gate" id="gate" role="status" aria-live="polite"></div>
 
     <div class="alarm">
-      <p><b>The reserved list is the same. The input is the same. The code is the same.</b> Only the locale of the server differs, and on one of these two machines the guard does not hold. This is why every platform's guidance on the matter says the same thing: a case-insensitive comparison made for a security decision must be ordinal or invariant, never locale-aware. The check demonstrated above is the wrong one, written the way it is usually written.</p>
+      <p><b>The reserved list is the same. The input is the same. The code is the same.</b> Only the locale of the server differs, and on one of these two machines the guard does not hold. This is why the guidance on the matter is so specific: a case-insensitive comparison made for a security decision must be an ordinal one. The invariant culture is not a substitute, because it is still linguistic; it is merely linguistic in a way that does not depend on where the server is. The check demonstrated above is the wrong one, written the way it is usually written.</p>
     </div>
 
     <p class="note" style="margin-top:18px">The Ministry has no view on who ought to be admitted. It observes only that the answer presently depends on the nationality of the server, that the server was never asked to declare one, and that the person at the gate has no way of knowing which country they are being judged in.</p>
@@ -374,7 +374,7 @@ Zürich</textarea>
         </tr>
         <tr>
           <td class="who">Germany</td>
-          <td class="what">Ä sorts as A in a dictionary and as AE in a telephone book. Both conventions are standardised, under the same standard, as parts one and two.</td>
+          <td class="what">Ä sorts as A under the general ordering rules, and as AE when what is being ordered is a list of names, which is the convention a telephone book follows. Both are standardised, as parts one and two of the same standard.</td>
           <td class="ordcell"><span class="ord">ä = a, or ae</span></td>
         </tr>
         <tr>
@@ -389,13 +389,13 @@ Zürich</textarea>
         </tr>
         <tr>
           <td class="who">Spain, until 1994</td>
-          <td class="what">CH and LL were letters, sorted after C and L. The academy abolished them as sorting units, and every book printed before the decision is still on the shelf, still ordered the old way.</td>
+          <td class="what">CH and LL were letters, sorted after C and L. The academy abolished them as sorting units, and the books printed before the decision are still on the shelf, still ordered the old way.</td>
           <td class="ordcell"><span class="ord">… c ch d … l ll m …</span></td>
         </tr>
         <tr>
           <td class="who">The machine, given no instructions</td>
-          <td class="what">Sorts by code point, so every capital letter precedes every lowercase one. Zebra arrives before apple. This is the only ordering on this page that no country uses and most software defaults to.</td>
-          <td class="ordcell"><span class="ord">A–Z then a–z</span></td>
+          <td class="what">Compares UTF-16 code units, so Zebra arrives before apple. It is often described as putting every capital before every lowercase letter, which holds only for unaccented ASCII: in the plot above, lowercase apple precedes capital &Auml;pfel. This is the ordering a program produces when nobody has chosen one.</td>
+          <td class="ordcell"><span class="ord">UTF-16 units</span></td>
         </tr>
       </tbody>
     </table>
@@ -451,7 +451,7 @@ Zürich</textarea>
 <script>
 (function(){
   var LOCALES = [
-    { id:'codepoint', name:'Code point', sub:'no locale given' },
+    { id:'codepoint', name:'UTF-16 order', sub:'no locale given' },
     { id:'en',        name:'English',    sub:'en' },
     { id:'de-u-co-phonebk', name:'German, phone book', sub:'de-u-co-phonebk' },
     { id:'sv',        name:'Swedish',    sub:'sv' },
@@ -465,22 +465,59 @@ Zürich</textarea>
   var NS = 'http://www.w3.org/2000/svg';
   function el(n,a){ var e = document.createElementNS(NS,n); for (var k in a) e.setAttribute(k,a[k]); return e; }
 
+  /* A browser may accept a tag such as de-u-co-phonebk and quietly give you
+     ordinary German. The plot says which collation it actually resolved, so a
+     column cannot claim an ordering the browser did not perform. */
+  var COLL = {};
+  function collatorFor(loc){
+    if (COLL.hasOwnProperty(loc)) return COLL[loc].c;
+    var rec = {c:null, resolved:null};
+    try {
+      rec.c = new Intl.Collator(loc);
+      var r = rec.c.resolvedOptions();
+      rec.resolved = (r.collation && r.collation !== 'default') ? r.collation : r.locale;
+    } catch (e) { rec.resolved = 'unavailable'; }
+    COLL[loc] = rec;
+    return rec.c;
+  }
+  function resolvedFor(L){
+    if (L.id === 'codepoint') return L.sub;
+    collatorFor(L.id);
+    var rec = COLL[L.id];
+    if (!rec.c) return L.sub + ' (unavailable)';
+    if (L.id === 'de-u-co-phonebk' && rec.resolved !== 'phonebk') return L.sub + ' (not honoured)';
+    return L.sub;
+  }
+
   var SPECIMENS = {
     mixed:   ['Aal','Äpfel','Ångström','apple','İstanbul','Izmir','ırmak','Ölberg','Zebra','Zürich'],
     nordic:  ['Aalborg','Åkerman','Ärlig','Öberg','Odense','Zetterberg','Ystad','Ängelholm','Aarhus','Øster'],
     turkish: ['Isparta','İzmir','ırmak','Iğdır','İstanbul','Ankara','Çanakkale','Şanlıurfa','Zonguldak','Ordu']
   };
 
+  var MAX = 14, dropped = 0, repeated = 0;
   function entries(){
-    return ta.value.split('\n').map(function(s){return s.trim()}).filter(function(s){return s.length}).slice(0,14);
+    /* indexOf ranks by value, so a repeated entry would take its first
+       occurrence's place in every column and corrupt the counts. The Ministry
+       files one copy of each. */
+    var raw = ta.value.split('\n').map(function(s){return s.trim()}).filter(function(s){return s.length});
+    var seen = {}, out = [];
+    for (var i=0;i<raw.length;i++){
+      var k = '\u0000' + raw[i];
+      if (seen[k]) { repeated++; continue; }
+      seen[k] = 1; out.push(raw[i]);
+    }
+    dropped = Math.max(0, out.length - MAX);
+    return out.slice(0, MAX);
   }
+  function trunc(w){ return w.length > 20 ? w.slice(0,19) + '\u2026' : w; }
 
   function sortBy(list, loc){
     var out = list.slice();
     if (loc === 'codepoint') { out.sort(); }
     else {
-      try { var c = new Intl.Collator(loc); out.sort(function(a,b){ return c.compare(a,b); }); }
-      catch (e) { out.sort(); }
+      var c = collatorFor(loc);
+      if (c) out.sort(function(a,b){ return c.compare(a,b); }); else out.sort();
     }
     return out;
   }
@@ -490,7 +527,12 @@ Zürich</textarea>
     var n = list.length;
     countEl.textContent = n + (n === 1 ? ' entry' : ' entries');
     while (plot.childNodes.length > 1) plot.removeChild(plot.lastChild);
-    if (!n) { summaryEl.innerHTML = '<span>Nothing submitted.</span>'; return; }
+    if (!n) {
+      plot.setAttribute('viewBox', '0 0 780 0');
+      plot.setAttribute('height', 0);
+      summaryEl.innerHTML = '<span>Nothing submitted. The Ministry has no view on the order of an empty list.</span>';
+      return;
+    }
 
     var orders = LOCALES.map(function(L){ return sortBy(list, L.id); });
     var rank = {};
@@ -520,11 +562,17 @@ Zürich</textarea>
       plot.appendChild(nm);
       var tg = el('text', {x:cx(i), y:45, 'text-anchor':'middle',
         'font-family':'ui-monospace,Menlo,Consolas,monospace', 'font-size':10, fill:'#98a0a9'});
-      tg.textContent = LOCALES[i].sub;
+      tg.textContent = resolvedFor(LOCALES[i]);
       plot.appendChild(tg);
     }
     plot.appendChild(el('line', {x1:0, y1:headH, x2:W, y2:headH,
       stroke:'#e4e7ea', 'stroke-width':1, 'shape-rendering':'crispEdges'}));
+    /* keep the text alternative describing what is actually drawn */
+    var titleEl = plot.querySelector('title');
+    if (titleEl) titleEl.textContent =
+      n + ' entries ordered under ' + LOCALES.length + ' jurisdictions. A curve is drawn '
+      + 'only where a jurisdiction moves an entry, green when it sorts the entry earlier '
+      + 'and amber when it sorts it later. Entries that never move are shown in grey with no curve.';
 
     /* a curve is drawn only where an entry actually moves, and its colour says
        which way: green if this jurisdiction sorts it earlier, amber if later */
@@ -553,14 +601,18 @@ Zürich</textarea>
         var moved = rank[w].some(function(x){ return x !== rank[w][0]; });
         var t = el('text', {x:cx(i), y:cy(r) + 4.5, 'text-anchor':'middle',
           'font-family':'ui-monospace,Menlo,Consolas,monospace', 'font-size':13.5,
-          fill: moved ? '#0e1013' : '#b2b9c0'});
-        t.textContent = w;
+          fill: moved ? '#0e1013' : '#6b727b'});
+        t.textContent = trunc(w);
         plot.appendChild(t);
       }
     }
 
+    var caveat = '';
+    if (repeated) caveat += ' ' + repeated + (repeated === 1 ? ' repeated entry was' : ' repeated entries were') + ' filed once.';
+    if (dropped) caveat += ' ' + dropped + ' beyond the first ' + MAX + ' were not ordered.';
     summaryEl.innerHTML =
-        '<span><b>' + disputed + '</b> of ' + n + ' entries are placed differently by at least one jurisdiction</span>'
+        '<span><b>' + disputed + '</b> of ' + n + ' entries are placed differently by at least one jurisdiction.'
+      +   (caveat ? '<span style="color:var(--faint)">' + caveat + '</span>' : '') + '</span>'
       + '<span class="key">'
       +   '<span><i style="background:' + UP + '"></i>sorts earlier</span>'
       +   '<span><i style="background:' + DOWN + '"></i>sorts later</span>'
