@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="There is no alphabetical order, there are alphabetical orders. The Ministry sorts one list under five jurisdictions at once and finds that lowercase is a matter of national security.">
+<meta name="robots" content="index, follow">
+
+<!-- PRODUCTION DOMAIN, hardcoded. The Ministry has no domain of its own, so
+     its canonical host is a subdomain of the parent. If that ever changes,
+     edit the four absolute URLs below and the footer of tools/og.html, then
+     re-run `make og`. Those are the only two files that name it. -->
+<link rel="canonical" href="https://alphabet.besteffortindustries.com/">
+<meta name="theme-color" content="#0e1013">
+
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon.ico" sizes="48x48 32x32 16x16">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Ministry of Alphabetical Order">
+<meta property="og:url" content="https://alphabet.besteffortindustries.com/">
+<meta property="og:title" content="Ministry of Alphabetical Order">
+<meta property="og:description" content="Every ruling this Ministry has issued is correct. Several of them contradict each other.">
+<meta property="og:image" content="https://alphabet.besteffortindustries.com/og.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Ministry of Alphabetical Order: the four Turkish letter I's set as a type specimen beneath the finding that there is no single alphabetical order.">
+<meta property="og:locale" content="en_US">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Ministry of Alphabetical Order">
+<meta name="twitter:description" content="Every ruling this Ministry has issued is correct. Several of them contradict each other.">
+<meta name="twitter:image" content="https://alphabet.besteffortindustries.com/og.png">
+<meta name="twitter:image:alt" content="Ministry of Alphabetical Order: the four Turkish letter I's set as a type specimen beneath the finding that there is no single alphabetical order.">
+<title>Ministry of Alphabetical Order</title>
+<style>
+  :root{
+    --ink:#0e1013; --ink-2:#252a31; --body:#41474f; --muted:#6b727b; --faint:#98a0a9;
+    --line:#e4e7ea; --line-2:#cdd2d8; --wash:#f6f7f8; --ground:#ffffff;
+    --accent:#0a7d55; --accent-lt:#e6f3ed; --accent-dk:#065f40;
+    --alert:#c62f22; --alert-lt:#fdeceb;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{background:var(--ground);color:var(--body);
+    font-family:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+  .mono{font-family:ui-monospace,"SF Mono",Menlo,Consolas,"Liberation Mono",monospace;
+    font-variant-numeric:tabular-nums}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 clamp(20px,4vw,44px)}
+  a{color:var(--accent);text-underline-offset:3px}
+  :focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+  ::selection{background:var(--ink);color:#fff}
+
+  /* ---------- masthead ---------- */
+  .top{background:var(--ink);color:#fff}
+  .top .wrap{display:flex;justify-content:space-between;align-items:center;gap:18px;
+    flex-wrap:wrap;padding-top:13px;padding-bottom:13px}
+  .brand{display:flex;align-items:center;gap:12px}
+  .mark{width:26px;height:26px;flex:none}
+  .brand b{font-size:13px;font-weight:650;letter-spacing:.02em}
+  .top .office{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:10.5px;
+    letter-spacing:.18em;text-transform:uppercase;color:#8b939d}
+
+  .hero{background:var(--ink);color:#fff;padding-top:clamp(46px,7vw,86px);
+    padding-bottom:clamp(40px,6vw,70px);position:relative;overflow:hidden}
+  .hero h1{font-size:clamp(34px,6.6vw,72px);font-weight:700;letter-spacing:-.035em;
+    line-height:1.02;max-width:17ch;text-wrap:balance;color:#fff}
+  .hero .strap{margin-top:22px;font-size:clamp(17px,2vw,21px);color:#aab2bb;max-width:52ch}
+  .hero .strap b{color:#fff;font-weight:600}
+
+  /* the four I's, as a type specimen */
+  .specimen{margin-top:14px;display:grid;grid-template-columns:repeat(4,1fr);gap:1px;
+    background:#262b32;border:1px solid #262b32}
+  .specimen > div{background:var(--ink);padding:22px 14px 20px;text-align:center}
+  .specimen .glyph{font-size:clamp(46px,7vw,84px);line-height:1;font-weight:400;color:#fff}
+  .specimen .on{color:#3ddc97}
+  .specimen .cap{margin-top:14px;font-family:ui-monospace,Menlo,Consolas,monospace;
+    font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:#79818b;line-height:1.5}
+  .hero .speclabel{margin-top:clamp(34px,5vw,56px);padding-top:24px;border-top:1px solid #262b32;font-family:ui-monospace,Menlo,Consolas,monospace;
+    font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:#79818b}
+
+  /* ---------- sections ---------- */
+  section{padding:clamp(52px,8vw,104px) 0;border-bottom:1px solid var(--line)}
+  section.tint{background:var(--wash)}
+  .eyebrow{display:flex;align-items:center;gap:12px;
+    font-family:ui-monospace,Menlo,Consolas,monospace;font-size:10.5px;letter-spacing:.2em;
+    text-transform:uppercase;color:var(--accent);font-weight:600}
+  .eyebrow:after{content:"";flex:1;height:1px;background:var(--line-2);max-width:120px}
+  h2{font-size:clamp(27px,4.2vw,46px);font-weight:700;letter-spacing:-.032em;line-height:1.06;
+    color:var(--ink);margin:18px 0 0;max-width:20ch;text-wrap:balance}
+  h2.wide{max-width:30ch}
+  .note{margin-top:18px;color:var(--muted);max-width:64ch;font-size:17px}
+  .lede{margin-top:18px;color:var(--body);max-width:64ch;font-size:18.5px}
+
+  /* ---------- the bench ---------- */
+  .bench{margin-top:clamp(28px,4vw,42px)}
+  .field{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:18px;align-items:end}
+  label{display:block;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:10px;
+    letter-spacing:.15em;text-transform:uppercase;color:var(--faint);margin-bottom:9px}
+  textarea{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:14.5px;width:100%;
+    min-height:118px;padding:14px 16px;border:1px solid var(--line-2);border-radius:2px;
+    background:var(--ground);color:var(--ink);line-height:1.75;resize:vertical}
+  textarea:focus{border-color:var(--accent);outline:none;box-shadow:0 0 0 3px var(--accent-lt)}
+  button{font-family:inherit;font-size:13.5px;font-weight:600;letter-spacing:.01em;
+    background:var(--ink);color:#fff;border:0;border-radius:2px;padding:15px 26px;cursor:pointer;
+    white-space:nowrap}
+  button:hover{background:var(--accent)}
+  .presets{margin-top:16px;display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+  .presets span{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:10px;
+    letter-spacing:.15em;text-transform:uppercase;color:var(--faint);margin-right:4px}
+  .chip{font-family:inherit;font-size:13px;font-weight:500;background:var(--ground);
+    color:var(--ink);border:1px solid var(--line-2);border-radius:100px;padding:7px 15px;cursor:pointer}
+  .chip:hover{border-color:var(--ink);background:var(--ground)}
+
+  .plate{margin-top:26px;background:var(--ground);border:1px solid var(--line);border-radius:3px;
+    overflow:hidden}
+  .plot-wrap{overflow-x:auto}
+  .plot{display:block;min-width:780px;width:100%;height:auto}
+  .plate .key{display:flex;gap:18px;flex-wrap:wrap;align-items:center;font-size:12.5px}
+  .plate .key i{display:inline-block;width:22px;height:2px;vertical-align:middle;margin-right:7px}
+  .plate .summary{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
+    padding:15px clamp(14px,2.4vw,22px);border-top:1px solid var(--line);background:var(--wash);
+    font-size:13.5px;color:var(--muted)}
+  .plate .summary b{color:var(--ink);font-weight:650}
+
+  /* ---------- the ruling ---------- */
+  .probe{margin-top:clamp(26px,4vw,38px);display:flex;gap:14px;flex-wrap:wrap;align-items:end}
+  .probe input{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:16px;padding:14px 16px;
+    border:1px solid var(--line-2);border-radius:2px;background:var(--ground);color:var(--ink);
+    width:min(100%,16em)}
+  .probe input:focus{border-color:var(--accent);outline:none;box-shadow:0 0 0 3px var(--accent-lt)}
+
+  .fold{margin-top:24px;display:grid;grid-template-columns:repeat(auto-fit,minmax(258px,1fr));
+    gap:1px;background:var(--line);border:1px solid var(--line);border-radius:3px;overflow:hidden}
+  .fold > div{background:var(--ground);padding:clamp(20px,2.6vw,26px)}
+  .fold .lbl{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:10px;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--faint)}
+  .fold .out{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:clamp(24px,3.2vw,32px);
+    margin-top:12px;color:var(--ink);word-break:break-all;letter-spacing:-.01em}
+  .fold .verdict{margin-top:12px;font-size:14.5px;color:var(--muted)}
+  .fold .bad{color:var(--alert)}
+  .fold .ok{color:var(--accent)}
+
+  .movement{font-size:clamp(21px,2.8vw,30px);font-weight:650;letter-spacing:-.025em;color:var(--ink);
+    margin-top:clamp(44px,6vw,68px);padding-top:clamp(30px,4vw,40px);border-top:1px solid var(--line);
+    max-width:24ch;line-height:1.14}
+
+  .gate{margin-top:24px;display:grid;grid-template-columns:repeat(auto-fit,minmax(276px,1fr));
+    gap:1px;background:var(--line);border:1px solid var(--line);border-radius:3px;overflow:hidden}
+  .gate > div{background:var(--ground);padding:clamp(20px,2.6vw,26px)}
+  .gate .machine{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:10px;
+    letter-spacing:.14em;text-transform:uppercase;color:var(--faint)}
+  .gate .typed{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:20px;margin-top:12px;
+    color:var(--ink)}
+  .gate .typed em{font-style:normal;color:var(--faint);padding:0 2px}
+  .gate .stamp{display:inline-flex;align-items:center;gap:8px;margin-top:16px;
+    font-size:12.5px;font-weight:650;letter-spacing:.06em;text-transform:uppercase;
+    padding:8px 14px;border-radius:100px}
+  .gate .stamp:before{content:"";width:7px;height:7px;border-radius:50%;background:currentColor}
+  .gate .refused{color:var(--accent);background:var(--accent-lt)}
+  .gate .admitted{color:var(--alert);background:var(--alert-lt)}
+  .gate .why{margin-top:14px;font-size:14.5px;color:var(--muted)}
+
+  .alarm{margin-top:24px;border-left:3px solid var(--alert);background:var(--ground);
+    padding:22px clamp(18px,2.6vw,26px);max-width:72ch;box-shadow:0 1px 2px rgba(14,16,19,.05)}
+  .alarm b{color:var(--ink);font-weight:650}
+
+  .finding{margin-top:30px;background:var(--ink);color:#fff;border-radius:3px;
+    padding:clamp(24px,3.4vw,34px);max-width:72ch}
+  .finding .qed{display:flex;align-items:baseline;gap:14px}
+  .finding .qed .sym{font-size:22px;color:#3ddc97;text-decoration:none;border:0}
+  .finding .qed b{font-weight:650;font-size:clamp(19px,2.6vw,25px);letter-spacing:-.02em;color:#fff}
+  .finding .after{margin-top:16px;font-size:15px;color:#a9b1ba;max-width:58ch}
+
+  /* ---------- tables ---------- */
+  table{width:100%;border-collapse:collapse;margin-top:clamp(26px,3.4vw,34px)}
+  th{text-align:left;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:10px;
+    letter-spacing:.15em;text-transform:uppercase;color:var(--faint);
+    padding:0 18px 12px 0;border-bottom:1px solid var(--line-2)}
+  th:last-child,td:last-child{text-align:right;padding-right:0}
+  td{padding:18px 18px 18px 0;border-bottom:1px solid var(--line);vertical-align:top}
+  td.who{color:var(--ink);font-weight:600;white-space:nowrap}
+  td.what{color:var(--muted);font-size:15.5px}
+  td.ordcell{text-align:right}
+  tr:last-child td{border-bottom:0}
+  .ord{display:inline-block;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:13px;
+    color:var(--accent-dk);background:var(--accent-lt);padding:4px 10px;border-radius:2px;
+    line-height:1.55;white-space:nowrap}
+
+  /* ---------- closed matters ---------- */
+  .rulings{margin-top:clamp(26px,3.4vw,34px);display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:var(--line);
+    border:1px solid var(--line);border-radius:3px;overflow:hidden}
+  .rulings article{background:var(--ground);padding:clamp(22px,2.8vw,30px)}
+  .rulings .no{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:10px;
+    letter-spacing:.16em;text-transform:uppercase;color:var(--accent);font-weight:600}
+  .rulings h3{font-size:18.5px;font-weight:650;letter-spacing:-.015em;color:var(--ink);margin-top:12px}
+  .rulings p{color:var(--muted);margin-top:10px;font-size:15px}
+
+  /* ---------- footer ---------- */
+  footer{background:var(--ink);color:#8b939d;padding:clamp(44px,6vw,72px) 0 clamp(52px,7vw,84px)}
+  footer .doc{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:10px;letter-spacing:.16em;
+    text-transform:uppercase;color:#5f6771;margin-bottom:20px}
+  footer p{max-width:76ch;font-size:14.5px}
+  footer p + p{margin-top:12px}
+  footer a{color:#fff;text-decoration:underline}
+
+  @media (max-width:720px){
+    table{margin-top:22px}
+    thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+    table,tbody,tr,td{display:block;width:100%}
+    tr{border-bottom:1px solid var(--line);padding:22px 0}
+    tr:last-child{border-bottom:0}
+    td{border-bottom:0;padding:0}
+    td:last-child,th:last-child{text-align:left}
+    td.who{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:10px;
+      letter-spacing:.15em;text-transform:uppercase;color:var(--faint);font-weight:600;
+      white-space:normal;margin-bottom:8px}
+    td.ordcell{text-align:left}
+    td + td{margin-top:12px}
+    .ord{white-space:normal;word-break:break-word}
+    .field{grid-template-columns:1fr}
+    .rulings{grid-template-columns:1fr}
+    .field button{width:100%}
+    .specimen{grid-template-columns:repeat(2,1fr)}
+  }
+</style>
+</head>
+<body>
+
+<div class="top">
+  <div class="wrap">
+    <div class="brand">
+      <svg class="mark" viewBox="0 0 32 32" role="img" aria-label="Ministry mark: A and Z separated by a rule, neither of them first">
+        <rect x="0.9" y="0.9" width="30.2" height="30.2" rx="3" fill="none" stroke="#3ddc97" stroke-width="1.8"></rect>
+        <text x="9.5" y="21.5" text-anchor="middle" font-family="system-ui,Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#ffffff">A</text>
+        <text x="22.5" y="21.5" text-anchor="middle" font-family="system-ui,Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#ffffff">Z</text>
+        <rect x="15.4" y="6" width="1.2" height="20" fill="#3ddc97"></rect>
+      </svg>
+      <b>Ministry of Alphabetical Order</b>
+    </div>
+    <span class="office">Office of the Registrar</span>
+  </div>
+</div>
+
+<div class="hero">
+  <div class="wrap">
+    <h1>There is no alphabetical order. There are alphabetical orders.</h1>
+    <p class="strap"><b>Every ruling this Ministry has issued is correct.</b> Several of them contradict each other.</p>
+
+    <div class="speclabel">Four letters, one of them the subject of the Ministry's principal ruling</div>
+    <div class="specimen">
+      <div><div class="glyph">I</div><div class="cap">Latin capital I<br>U+0049</div></div>
+      <div><div class="glyph on">&#x0131;</div><div class="cap">Small dotless i<br>U+0131</div></div>
+      <div><div class="glyph on">&#x0130;</div><div class="cap">Capital I with dot<br>U+0130</div></div>
+      <div><div class="glyph">i</div><div class="cap">Latin small i<br>U+0069</div></div>
+    </div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow">The bench</div>
+    <h2>The same list, sorted correctly, five times</h2>
+    <p class="note">Nothing below is simulated. Your browser performs each ordering itself, using the Unicode collation data it already ships with. A line joins each entry to itself across the five jurisdictions: where it runs flat they agree, and where it crosses another line they do not. An entry that never moves is set in grey, having caused nobody any trouble.</p>
+
+    <div class="bench">
+      <div class="field">
+        <div>
+          <label for="items">Matter submitted for ordering &middot; one entry per line</label>
+          <textarea id="items" spellcheck="false">Aal
+Äpfel
+Ångström
+apple
+İstanbul
+Izmir
+ırmak
+Ölberg
+Zebra
+Zürich</textarea>
+        </div>
+        <button id="sortBtn" type="button">Order the list</button>
+      </div>
+      <div class="presets">
+        <span>Specimens</span>
+        <button class="chip" type="button" data-set="mixed">Mixed European</button>
+        <button class="chip" type="button" data-set="nordic">Nordic</button>
+        <button class="chip" type="button" data-set="turkish">Turkish</button>
+        <span id="count" style="margin-left:auto;margin-right:0">10 entries</span>
+      </div>
+
+      <div class="plate">
+        <div class="plot-wrap">
+          <svg class="plot" id="plot" role="img" aria-labelledby="plotTitle">
+            <title id="plotTitle">The same entries ordered under five jurisdictions, with a line joining each entry to itself; the lines cross wherever two jurisdictions disagree</title>
+          </svg>
+        </div>
+        <div class="summary" id="summary"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="tint">
+  <div class="wrap">
+    <div class="eyebrow">The principal ruling &middot; the letter I</div>
+    <h2 class="wide">The Ministry finds that lowercase is a matter of nationality and of security, thus a matter of national security</h2>
+    <p class="note">Turkish has two letter I's, and they are different letters. Dotted <span class="mono">i</span> uppercases to dotted <span class="mono">İ</span>. Dotless <span class="mono">ı</span> uppercases to plain <span class="mono">I</span>. Lowercasing is therefore not a universal operation, and software that assumes it is has been failing in Turkey for thirty years, usually at the login screen.</p>
+
+    <div class="probe">
+      <div>
+        <label for="probe">Word submitted to the Ministry</label>
+        <input id="probe" type="text" value="ADMIN" spellcheck="false" autocomplete="off">
+      </div>
+      <button id="probeBtn" type="button">Fold it</button>
+    </div>
+
+    <div class="fold">
+      <div>
+        <div class="lbl">Lowercased on an English machine</div>
+        <div class="out" id="outPlain">-</div>
+        <div class="verdict" id="vPlain">-</div>
+      </div>
+      <div>
+        <div class="lbl">Lowercased on a Turkish machine</div>
+        <div class="out" id="outTr">-</div>
+        <div class="verdict" id="vTr">-</div>
+      </div>
+      <div>
+        <div class="lbl">Are the two results equal?</div>
+        <div class="out" id="outEq">-</div>
+        <div class="verdict" id="vEq">-</div>
+      </div>
+    </div>
+
+    <p class="note" style="margin-top:18px">A program lowercases what you typed, compares it against a stored value, and finds them different, because one machine was set to Turkish and the other was not. The comparison is correct. The strings are genuinely not the same. Nobody involved has made an error.</p>
+
+    <h3 class="movement">The consequence is not typographic</h3>
+    <p class="note">A system keeps you out of a reserved account by lowercasing what you typed and comparing it against a list. Lowercasing is a matter of nationality. Not yours: the machine's. The Ministry did not intend to acquire a national security brief. It is about to acquire one by deduction, which is the only way this Ministry acquires anything.</p>
+
+    <div class="gate" id="gate"></div>
+
+    <div class="alarm">
+      <p><b>The reserved list is the same. The input is the same. The code is the same.</b> Only the locale of the server differs, and on one of these two machines the guard does not hold. This is why every platform's guidance on the matter says the same thing: a case-insensitive comparison made for a security decision must be ordinal or invariant, never locale-aware. The check demonstrated above is the wrong one, written the way it is usually written.</p>
+    </div>
+
+    <p class="note" style="margin-top:18px">The Ministry has no view on who ought to be admitted. It observes only that the answer presently depends on the nationality of the server, that the server was never asked to declare one, and that the person at the gate has no way of knowing which country they are being judged in.</p>
+
+    <div class="finding">
+      <div class="qed">
+        <abbr class="sym" title="therefore">&there4;</abbr>
+        <b>Filed as a matter of national security.</b>
+      </div>
+      <p class="after">The Ministry reached that conclusion by ordinary deduction, was startled by it, checked the working twice, and found the working sound. The two premises are demonstrated above, in the order they were established.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow">Schedule of standing contradictions</div>
+    <h2>Jurisdictions in permanent, formal disagreement</h2>
+    <p class="note">Each of these is the correct order in the place that uses it. The Ministry has ruled in favour of all of them.</p>
+    <table>
+      <thead><tr><th>Jurisdiction</th><th>Ruling</th><th>Order</th></tr></thead>
+      <tbody>
+        <tr>
+          <td class="who">Sweden</td>
+          <td class="what">Å, Ä and Ö are letters in their own right and come after Z. A Swedish telephone directory ends in a place an English one has never heard of.</td>
+          <td class="ordcell"><span class="ord">… x y z å ä ö</span></td>
+        </tr>
+        <tr>
+          <td class="who">Germany</td>
+          <td class="what">Ä sorts as A in a dictionary and as AE in a telephone book. Both conventions are standardised, under the same standard, as parts one and two.</td>
+          <td class="ordcell"><span class="ord">ä = a, or ae</span></td>
+        </tr>
+        <tr>
+          <td class="who">Estonia</td>
+          <td class="what">Z sits between S and T, which is where it has always been, and is a persistent surprise to every piece of software that assumed Z ends the alphabet.</td>
+          <td class="ordcell"><span class="ord">… s š z ž t …</span></td>
+        </tr>
+        <tr>
+          <td class="who">Czechia</td>
+          <td class="what">CH is one letter and sorts after H, so <span class="mono">chyba</span> comes after <span class="mono">hudba</span> and well after <span class="mono">cukr</span>.</td>
+          <td class="ordcell"><span class="ord">… h ch i …</span></td>
+        </tr>
+        <tr>
+          <td class="who">Spain, until 1994</td>
+          <td class="what">CH and LL were letters, sorted after C and L. The academy abolished them as sorting units, and every book printed before the decision is still on the shelf, still ordered the old way.</td>
+          <td class="ordcell"><span class="ord">… c ch d … l ll m …</span></td>
+        </tr>
+        <tr>
+          <td class="who">The machine, given no instructions</td>
+          <td class="what">Sorts by code point, so every capital letter precedes every lowercase one. Zebra arrives before apple. This is the only ordering on this page that no country uses and most software defaults to.</td>
+          <td class="ordcell"><span class="ord">A–Z then a–z</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="tint">
+  <div class="wrap">
+    <div class="eyebrow">Schedule of closed matters</div>
+    <h2>Matters the Ministry considers closed</h2>
+    <p class="note">Filed in the Ministry's own order, which is alphabetical. Four therefore precedes One, and Three precedes Two, because <span class="mono">f</span> comes before <span class="mono">o</span> and <span class="mono">three</span> comes before <span class="mono">two</span>. The Ministry is aware of how this looks and declines to file its rulings in an order it does not itself endorse.</p>
+    <div class="rulings">
+      <article>
+        <div class="no">Four</div>
+        <div>
+          <h3>On the finality of rulings</h3>
+          <p>All rulings of this Ministry are final within the jurisdiction that requested them and void everywhere else. This is not a limitation of the Ministry. It is the subject matter.</p>
+        </div>
+      </article>
+      <article>
+        <div class="no">One</div>
+        <div>
+          <h3>On the sorting of names by surname</h3>
+          <p>The Ministry declines to define surname. Several jurisdictions place the family name first, several use no family name at all, and the Ministry has been asked to rule on which half of a name is the important half. It will not.</p>
+        </div>
+      </article>
+      <article>
+        <div class="no">Three</div>
+        <div>
+          <h3>On numbers appearing in text</h3>
+          <p>Item 10 sorts before item 9 whenever the sort is alphabetical, which it usually is. The Ministry regards this as correct, widely understood, and the single most reported defect in its history. It notes that this ruling is numbered Three and, by alphabetical accident, is also filed third, the only point on this page where the two systems agree.</p>
+        </div>
+      </article>
+      <article>
+        <div class="no">Two</div>
+        <div>
+          <h3>On the position of the space</h3>
+          <p>Whether <span class="mono">New York</span> precedes <span class="mono">Newark</span> depends on whether a space sorts before a letter. Both answers ship. The Ministry notes that the two orderings put the same two cities either side of each other and that nobody has ever noticed.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="doc">DOC: BEI-MAO &middot; REV 1.0 / ISSUED / CORRECT IN AT LEAST ONE JURISDICTION</div>
+    <p>The Ministry of Alphabetical Order is a division of <a href="https://besteffortindustries.com">Best Effort Industries</a> and has no authority anywhere. The collation on this page is performed by your own browser using the Unicode collation data it ships with, so the disagreements are its opinions rather than ours. The Turkish letter I, the Swedish placement of Å, Ä and Ö, the two German conventions, the Estonian position of Z, the Czech treatment of CH and the Spanish decision of 1994 are all real and may be checked.</p>
+    <p>Nothing you type is transmitted anywhere. It is ordered locally, several times, incompatibly.</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var LOCALES = [
+    { id:'codepoint', name:'Code point', sub:'no locale given' },
+    { id:'en',        name:'English',    sub:'en' },
+    { id:'de-u-co-phonebk', name:'German, phone book', sub:'de-u-co-phonebk' },
+    { id:'sv',        name:'Swedish',    sub:'sv' },
+    { id:'tr',        name:'Turkish',    sub:'tr' }
+  ];
+
+  var ta = document.getElementById('items');
+  var plot = document.getElementById('plot');
+  var summaryEl = document.getElementById('summary');
+  var countEl = document.getElementById('count');
+  var NS = 'http://www.w3.org/2000/svg';
+  function el(n,a){ var e = document.createElementNS(NS,n); for (var k in a) e.setAttribute(k,a[k]); return e; }
+
+  var SPECIMENS = {
+    mixed:   ['Aal','Äpfel','Ångström','apple','İstanbul','Izmir','ırmak','Ölberg','Zebra','Zürich'],
+    nordic:  ['Aalborg','Åkerman','Ärlig','Öberg','Odense','Zetterberg','Ystad','Ängelholm','Aarhus','Øster'],
+    turkish: ['Isparta','İzmir','ırmak','Iğdır','İstanbul','Ankara','Çanakkale','Şanlıurfa','Zonguldak','Ordu']
+  };
+
+  function entries(){
+    return ta.value.split('\n').map(function(s){return s.trim()}).filter(function(s){return s.length}).slice(0,14);
+  }
+
+  function sortBy(list, loc){
+    var out = list.slice();
+    if (loc === 'codepoint') { out.sort(); }
+    else {
+      try { var c = new Intl.Collator(loc); out.sort(function(a,b){ return c.compare(a,b); }); }
+      catch (e) { out.sort(); }
+    }
+    return out;
+  }
+
+  function render(){
+    var list = entries();
+    var n = list.length;
+    countEl.textContent = n + (n === 1 ? ' entry' : ' entries');
+    while (plot.childNodes.length > 1) plot.removeChild(plot.lastChild);
+    if (!n) { summaryEl.innerHTML = '<span>Nothing submitted.</span>'; return; }
+
+    var orders = LOCALES.map(function(L){ return sortBy(list, L.id); });
+    var rank = {};
+    list.forEach(function(w){ rank[w] = orders.map(function(o){ return o.indexOf(w); }); });
+
+    var W = Math.max(780, Math.round(plot.getBoundingClientRect().width || 780));
+    var headH = 62, rowH = 30, padTop = 20, padBot = 20;
+    var H = headH + padTop + n*rowH + padBot;
+    plot.setAttribute('viewBox', '0 0 ' + W + ' ' + H);
+    plot.setAttribute('height', H);
+
+    var colW = W / LOCALES.length;
+    function cx(i){ return colW*(i + 0.5); }
+    function cy(r){ return headH + padTop + r*rowH + rowH/2; }
+
+    /* column rules and the header live in the same coordinate system as the
+       entries, so nothing can drift out of alignment */
+    for (var i=1;i<LOCALES.length;i++){
+      plot.appendChild(el('line', {x1:colW*i, y1:0, x2:colW*i, y2:H,
+        stroke:'#edeff1', 'stroke-width':1, 'shape-rendering':'crispEdges'}));
+    }
+    for (var i=0;i<LOCALES.length;i++){
+      var nm = el('text', {x:cx(i), y:26, 'text-anchor':'middle',
+        'font-family':'system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif',
+        'font-size':12.5, 'font-weight':'650', fill:'#0e1013'});
+      nm.textContent = LOCALES[i].name;
+      plot.appendChild(nm);
+      var tg = el('text', {x:cx(i), y:45, 'text-anchor':'middle',
+        'font-family':'ui-monospace,Menlo,Consolas,monospace', 'font-size':10, fill:'#98a0a9'});
+      tg.textContent = LOCALES[i].sub;
+      plot.appendChild(tg);
+    }
+    plot.appendChild(el('line', {x1:0, y1:headH, x2:W, y2:headH,
+      stroke:'#e4e7ea', 'stroke-width':1, 'shape-rendering':'crispEdges'}));
+
+    /* a curve is drawn only where an entry actually moves, and its colour says
+       which way: green if this jurisdiction sorts it earlier, amber if later */
+    var UP = '#0a7d55', DOWN = '#b4711a';
+    var disputed = 0, ups = 0, downs = 0;
+    list.forEach(function(w){
+      var rs = rank[w];
+      if (rs.some(function(r){ return r !== rs[0]; })) disputed++;
+      for (var i=0;i<rs.length-1;i++){
+        if (rs[i] === rs[i+1]) continue;            /* unchanged: draw nothing */
+        var rises = rs[i+1] < rs[i];
+        if (rises) ups++; else downs++;
+        var x1 = cx(i) + colW*0.28, y1 = cy(rs[i]);
+        var x2 = cx(i+1) - colW*0.28, y2 = cy(rs[i+1]);
+        var d = 'M' + x1 + ' ' + y1
+              + ' C' + (x1 + (x2-x1)*0.5) + ' ' + y1 + ' '
+              +        (x1 + (x2-x1)*0.5) + ' ' + y2 + ' ' + x2 + ' ' + y2;
+        plot.appendChild(el('path', {d:d, fill:'none', stroke: rises ? UP : DOWN,
+          'stroke-width':1.6, 'stroke-linecap':'round', opacity:.72}));
+      }
+    });
+
+    for (var i=0;i<orders.length;i++){
+      for (var r=0;r<orders[i].length;r++){
+        var w = orders[i][r];
+        var moved = rank[w].some(function(x){ return x !== rank[w][0]; });
+        var t = el('text', {x:cx(i), y:cy(r) + 4.5, 'text-anchor':'middle',
+          'font-family':'ui-monospace,Menlo,Consolas,monospace', 'font-size':13.5,
+          fill: moved ? '#0e1013' : '#b2b9c0'});
+        t.textContent = w;
+        plot.appendChild(t);
+      }
+    }
+
+    summaryEl.innerHTML =
+        '<span><b>' + disputed + '</b> of ' + n + ' entries are placed differently by at least one jurisdiction</span>'
+      + '<span class="key">'
+      +   '<span><i style="background:' + UP + '"></i>sorts earlier</span>'
+      +   '<span><i style="background:' + DOWN + '"></i>sorts later</span>'
+      +   '<span style="color:#b2b9c0">grey entries never move</span>'
+      + '</span>';
+  }
+
+  function esc(s){ var d = document.createElement('div'); d.textContent = s; return d.innerHTML; }
+
+  document.getElementById('sortBtn').addEventListener('click', render);
+  var chips = document.querySelectorAll('.chip');
+  for (var ci=0; ci<chips.length; ci++){
+    chips[ci].addEventListener('click', function(){
+      ta.value = SPECIMENS[this.getAttribute('data-set')].join('\n');
+      render();
+    });
+  }
+  var prt;
+  window.addEventListener('resize', function(){ clearTimeout(prt); prt = setTimeout(render, 150); });
+  ta.addEventListener('input', function(){
+    var n = entries().length;
+    countEl.textContent = n + (n === 1 ? ' entry' : ' entries');
+  });
+  render();
+
+  /* The principal ruling. One input, folded on two machines, then presented
+     at a gate that decides on the folded form. */
+  var RESERVED = ['admin','root','administrator','superuser','operator'];
+  var probe = document.getElementById('probe');
+  var gate = document.getElementById('gate');
+
+  function fold(t, locale){
+    try { return locale ? t.toLocaleLowerCase(locale) : t.toLowerCase(); }
+    catch (e) { return t.toLowerCase(); }
+  }
+
+  function machine(label, locale, typed){
+    var folded = fold(typed, locale);
+    var blocked = RESERVED.indexOf(folded) !== -1;
+    var reservedSomewhere = RESERVED.indexOf(typed.toLowerCase()) !== -1
+                         || RESERVED.indexOf(fold(typed,'tr')) !== -1;
+    var why = blocked
+      ? 'The folded form is on the reserved list. The gate holds.'
+      : (reservedSomewhere
+          ? 'The folded form is not on the reserved list, because folding it here produced a different string. The gate opens for a name it was built to refuse.'
+          : 'Not a reserved name in any locale. Try one that contains the letter I.');
+    return '<div>'
+      + '<div class="machine">' + label + '</div>'
+      + '<div class="typed">' + esc(typed || '-') + ' <em>&rarr;</em> ' + esc(folded || '-') + '</div>'
+      + '<div class="stamp ' + (blocked ? 'refused' : 'admitted') + '">'
+      +   (blocked ? 'Refused' : 'Admitted') + '</div>'
+      + '<div class="why">' + why + '</div>'
+      + '</div>';
+  }
+
+  function rule(){
+    var w = probe.value || '';
+    var plain = fold(w, null), tr = fold(w, 'tr');
+
+    document.getElementById('outPlain').textContent = plain || '-';
+    document.getElementById('outTr').textContent = tr || '-';
+    document.getElementById('vPlain').textContent = 'The result where nobody set a locale, which is most places.';
+    document.getElementById('vTr').textContent = 'The result in Turkey. Dotted I folds to dotted i; plain I folds to dotless \u0131.';
+
+    var eq = plain === tr;
+    var eqEl = document.getElementById('outEq'), vEq = document.getElementById('vEq');
+    eqEl.textContent = eq ? 'Equal' : 'Not equal';
+    eqEl.className = 'out ' + (eq ? 'ok' : 'bad');
+    vEq.textContent = eq
+      ? 'This word survives the crossing. Try one containing the letter I.'
+      : 'Two correct foldings of one word that do not match. Any comparison between them fails, and no party to it is wrong.';
+
+    gate.innerHTML = machine('Server set to English', 'en', w)
+                   + machine('Server set to Turkish', 'tr', w);
+  }
+  document.getElementById('probeBtn').addEventListener('click', rule);
+  probe.addEventListener('input', rule);
+  rule();
+})();
+</script>
+
+</body>
+</html>

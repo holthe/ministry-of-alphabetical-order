@@ -1,0 +1,10 @@
+<!-- Source for /favicon.svg. The letterforms are still live text here;
+     `make favicon` runs Inkscape with export-text-to-path so the committed
+     icon does not depend on the viewer's fonts. A and Z, divided, neither of
+     them first. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="A and Z separated by a rule, neither of them first">
+  <rect width="64" height="64" fill="#0e1013"/>
+  <text x="19" y="43" text-anchor="middle" font-family="Liberation Sans, Helvetica, Arial, sans-serif" font-size="30" font-weight="bold" fill="#ffffff">A</text>
+  <text x="45" y="43" text-anchor="middle" font-family="Liberation Sans, Helvetica, Arial, sans-serif" font-size="30" font-weight="bold" fill="#ffffff">Z</text>
+  <rect x="30.8" y="11" width="2.4" height="42" fill="#3ddc97"/>
+</svg>

@@ -1,0 +1,8 @@
+# Crawl freely. Index in whatever order your locale prefers.
+
+User-agent: *
+Allow: /
+
+# There is no sitemap. There is one ruling and a 404.
+# If your crawler sorts these pages, the Ministry would be interested to know
+# which collation it used, and asks that it be stated rather than assumed.

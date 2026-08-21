@@ -1,0 +1,14 @@
+<!-- Pixel-grid 16px icon for the smallest .ico entry. Two letterforms cannot
+     survive 16 pixels, so the mark reduces to what the division is about: two
+     columns of order, and the rule between them that nobody agrees on. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16" shape-rendering="crispEdges">
+  <rect width="16" height="16" fill="#0e1013"/>
+  <g fill="#ffffff">
+    <rect x="2" y="3" width="5" height="2"/>
+    <rect x="2" y="7" width="5" height="2"/>
+    <rect x="2" y="11" width="5" height="2"/>
+    <rect x="9" y="3" width="5" height="2"/>
+    <rect x="9" y="11" width="5" height="2"/>
+  </g>
+  <rect x="9" y="7" width="5" height="2" fill="#3ddc97"/>
+</svg>

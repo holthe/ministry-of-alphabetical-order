@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<!--
+  Source for /og.png (1200x630). Rendered by `make og`.
+  Edit the copy here, not the PNG. Regenerate after any tagline change.
+  The card is the site in miniature: the finding, and the four letters it
+  turns on. The domain in the footer is the canonical host; if the site
+  moves, change it here too and re-run `make og`.
+-->
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { width: 1200px; height: 630px; }
+  body {
+    background: #0e1013;
+    color: #ffffff;
+    font-family: "Liberation Sans", Helvetica, Arial, sans-serif;
+    padding: 62px 70px;
+    display: flex; flex-direction: column;
+    position: relative;
+  }
+  .rail {
+    display: flex; justify-content: space-between; align-items: center;
+    font-family: "Liberation Mono", "Courier New", monospace;
+    font-size: 15px; letter-spacing: .17em; text-transform: uppercase;
+    color: #8b939d; border-bottom: 1px solid #262b32; padding-bottom: 20px;
+  }
+  .rail .name { color: #ffffff; letter-spacing: .1em; }
+  h1 {
+    font-size: 54px; font-weight: bold; letter-spacing: -0.035em;
+    line-height: 1.04; margin-top: 34px; max-width: 20ch;
+  }
+  p { margin-top: 20px; font-size: 22px; color: #aab2bb; max-width: 52ch; }
+  p b { color: #ffffff; }
+  .specimen {
+    margin-top: auto; margin-bottom: 54px;
+    display: flex; gap: 1px; background: #262b32; border: 1px solid #262b32;
+  }
+  .specimen div { flex: 1; background: #0e1013; padding: 16px 10px 14px; text-align: center; }
+  .specimen .g { font-size: 46px; line-height: 1; }
+  .specimen .on { color: #3ddc97; }
+  .specimen .c {
+    margin-top: 10px; font-family: "Liberation Mono", "Courier New", monospace;
+    font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: #79818b;
+  }
+  .foot {
+    position: absolute; left: 0; right: 0; bottom: 0;
+    padding: 0 70px 26px;
+    display: flex; justify-content: space-between;
+    font-family: "Liberation Mono", "Courier New", monospace;
+    font-size: 15px; color: #5f6771;
+    text-transform: uppercase; letter-spacing: .14em;
+  }
+</style>
+</head>
+<body>
+  <div class="rail">
+    <span class="name">Ministry of Alphabetical Order</span>
+    <span>Office of the Registrar</span>
+  </div>
+
+  <h1>There is no alphabetical order. There are alphabetical orders.</h1>
+  <p><b>Every ruling this Ministry has issued is correct.</b> Several of them contradict each other.</p>
+
+  <div class="specimen">
+    <div><div class="g">I</div><div class="c">U+0049</div></div>
+    <div><div class="g on">&#x0131;</div><div class="c">U+0131</div></div>
+    <div><div class="g on">&#x0130;</div><div class="c">U+0130</div></div>
+    <div><div class="g">i</div><div class="c">U+0069</div></div>
+  </div>
+
+  <div class="foot">
+    <span>DOC: BEI-MAO</span>
+    <span>ALPHABET.BESTEFFORTINDUSTRIES.COM</span>
+    <span>Correct in at least one jurisdiction</span>
+  </div>
+</body>
+</html>
